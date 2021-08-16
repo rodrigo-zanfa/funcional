@@ -1,0 +1,368 @@
+{
+	"info": {
+		"_postman_id": "acf350f9-56e6-4dc3-af63-5ac6b1339f5d",
+		"name": "BancoDigitalAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetCorrentistas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44381/api/Correntista",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44381",
+					"path": [
+						"api",
+						"Correntista"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetContasCorrentes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44381/api/ContaCorrente",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44381",
+					"path": [
+						"api",
+						"ContaCorrente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetContasCorrentesCpf",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44381/api/ContaCorrente/cpf/32516143800",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44381",
+					"path": [
+						"api",
+						"ContaCorrente",
+						"cpf",
+						"32516143800"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCorrentistaCpf",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44381/api/Correntista/33713557802",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44381",
+					"path": [
+						"api",
+						"Correntista",
+						"33713557802"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostCorrentista",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cpf\": \"27920152259\",\r\n    \"nome\": \"Donizeti Caraça\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44381/api/Correntista",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44381",
+					"path": [
+						"api",
+						"Correntista"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutCorrentista",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cpf\": \"27920152259\",\r\n    \"nome\": \"Donizeti Caraça ALTERADO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44381/api/Correntista/27920152259",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44381",
+					"path": [
+						"api",
+						"Correntista",
+						"27920152259"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GraphQL_QueryCorrentistas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\n  correntistas {\r\n    cpf\r\n    nome\r\n  }\r\n}\r\n",
+						"variables": ""
+					},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44381/graphql",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44381",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GraphQL_QueryCorrentistasCpf",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\n  correntistas(where: { cpf: \"33713557802\" }) {\r\n    cpf\r\n    nome\r\n  }\r\n}\r\n",
+						"variables": ""
+					},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44381/graphql",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44381",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GraphQL_QueryContasCorrentes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\n  contasCorrentes {\r\n    numero\r\n    saldo\r\n    correntistaCpf\r\n    correntista {\r\n      cpf\r\n      nome\r\n    }\r\n  }\r\n}\r\n",
+						"variables": ""
+					},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44381/graphql",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44381",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GraphQL_MutationDepositar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\r\n  depositar(depositarInput: { numero: 1, valor: 100 }) {\r\n    numero\r\n    saldo\r\n    correntistaCpf\r\n  }\r\n}\r\n",
+						"variables": ""
+					},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44381/graphql",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44381",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GraphQL_MutationSacar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\r\n  sacar(sacarInput: { numero: 1, valor: 50 }) {\r\n    numero\r\n    saldo\r\n    correntistaCpf\r\n  }\r\n}\r\n",
+						"variables": ""
+					},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44381/graphql",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44381",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GraphQL_QueryContasCorrentesTodasComSaldo0",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\n  contasCorrentes(where: { saldo: 0 }) {\r\n    numero\r\n    correntista {\r\n      cpf\r\n      nome\r\n    }\r\n  }\r\n}\r\n",
+						"variables": ""
+					},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44381/graphql",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44381",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GraphQL_QueryContasCorrentesSaldoDeUmaConta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\n  contasCorrentes(where: { numero: 1 }) {\r\n    saldo\r\n    correntista {\r\n      cpf\r\n      nome\r\n    }\r\n  }\r\n}\r\n",
+						"variables": ""
+					},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44381/graphql",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44381",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
